@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import react from "react";
+// Add image 
+import uoj from "./uoj.jpg"
 function App() {
+
+  const name = "UOJ"
+  const greeting = `Welcome to ${name} 👋`
+  // add image
+  const add_image = <img src={uoj} width={"500px"} alt="university of jaffna"></img>
+
+  // props
+  const welcome = (props) => {
+    return <div> {props.children} </div>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <h1> {greeting} </h1>
+      <img src={uoj} width={"500px"} alt="university of jaffna"></img>
+      {/* {add_image} */}
+
+      <welcome>
+        <li> <a href="#"> Home </a> </li>
+        <li> <a href="#"> About us </a> </li>
+        <li> <a href="#"> Contact us </a> </li>
+
+      </welcome>
+
+    </div> 
   );
 }
 
